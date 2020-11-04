@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Administrative tasks user</h1>
+<div mat-dialog-content>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="describe your task" [(ngModel)]="data.description" [ngModelOptions]="{standalone: true}"></textarea>
+    </mat-form-field>
+    <!-- -->
+    <section class="example-section">
+      <label class="example-margin">State:</label>
+      <mat-radio-group [(ngModel)]="data.state" [ngModelOptions]="{standalone: true}">
+        <mat-radio-button class="example-margin" value="to do">
+         To do
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="done">
+          Done
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+</div>
